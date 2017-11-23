@@ -186,6 +186,7 @@
     <Compile Include="Areas\Fish\Controllers\HomeController.cs" />
     <Compile Include="Areas\Fish\FishAreaRegistration.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Extensions\EnumExtensions.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

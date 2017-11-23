@@ -13,15 +13,15 @@ namespace ReefTank.Models.Inhabitants
         public virtual int Volume { get; set; }
 
         [Property]
-        public virtual ReefSafety ReefSafety { get; set; }
+        public virtual Suitability Suitability { get; set; }
+
+        [Property]
+        public virtual ReefCompatability ReefCompatability { get; set; }
 
         [Property]
         public virtual Temperament Temperament { get; set; }
 
         [Property]
         public virtual Hardiness Hardiness { get; set; }
-
-        [Property]
-        public virtual Suitability Suitability { get; set; }
     }
 }
