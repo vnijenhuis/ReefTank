@@ -19,6 +19,12 @@ namespace ReefTank.Models.Base
         [Property]
         public virtual string CommonName { get; set; }
 
+        [Property]
+        public virtual string Description { get; set; }
+
+        [Property]
+        public virtual string Origin { get; set; }
+
         [BelongsTo(NotNull = true)]
         public virtual Genus Genus { get; set; }
 
@@ -34,9 +40,6 @@ namespace ReefTank.Models.Base
                 return fullName;
             }
         }
-
-        [Property]
-        public virtual string Description { get; set; }
 
         [HasAndBelongsToMany(
             Lazy = true,
