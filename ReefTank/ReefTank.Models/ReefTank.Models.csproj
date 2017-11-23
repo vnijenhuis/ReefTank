@@ -75,11 +75,10 @@
     <Compile Include="Corals\Difficulty.cs" />
     <Compile Include="Corals\Coral.cs" />
     <Compile Include="Base\Genus.cs" />
-    <Compile Include="Base\Family.cs" />
+    <Compile Include="Base\Subcategory.cs" />
     <Compile Include="Base\Creature.cs" />
     <Compile Include="Base\Reference.cs" />
     <Compile Include="Base\Tag.cs" />
-    <Compile Include="Corals\CoralType.cs" />
     <Compile Include="Inhabitants\Suitability.cs" />
     <Compile Include="Inhabitants\Temperament.cs" />
     <Compile Include="Inhabitants\ReefCompatability.cs" />

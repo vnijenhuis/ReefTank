@@ -73,10 +73,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Creatures\CreatureService.cs" />
+    <Compile Include="Creatures\ICreatureService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ReefTank.Core\ReefTank.Core.csproj">
+      <Project>{F9055DF0-1145-413A-8767-A5830450706F}</Project>
+      <Name>ReefTank.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ReefTank.Models\ReefTank.Models.csproj">
+      <Project>{3E3C8106-CA5F-47D0-9439-860E4A057D13}</Project>
+      <Name>ReefTank.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

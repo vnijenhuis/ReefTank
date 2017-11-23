@@ -1,35 +1,30 @@
 ﻿using System;
 using System.Collections.Generic;
 using Castle.ActiveRecord;
+using ReefTank.Core.Domain;
 
 namespace ReefTank.Models.Base
 {
     [ActiveRecord(Lazy = true, DiscriminatorColumn = "Type", DiscriminatorType = "string", DiscriminatorLength = "255", DiscriminatorValue = "Creature")]
-    public class Creature
+    public class Creature : IAggregateRoot
     {
         [PrimaryKey(PrimaryKeyType.GuidComb)]
         public virtual Guid Id { get; set; }
 
-        [BelongsTo]
-        public virtual Category Category { get; set; }
-
-        [Property]
-        public virtual string Type { get; set; }
-
         [Property]
         public virtual string CommonName { get; set; }
 
-        [Property]
+        [Property(ColumnType = "StringClob", SqlType = "nvarchar(2000)")]
         public virtual string Description { get; set; }
+
+        [BelongsTo]
+        public virtual Genus Genus { get; set; }
+
+        [Property]
+        public virtual string Species { get; set; }
 
         [Property]
         public virtual string Origin { get; set; }
-
-        [BelongsTo(NotNull = true)]
-        public virtual Genus Genus { get; set; }
-
-        [Property(NotNull = true)]
-        public virtual string Species { get; set; }
 
         public virtual string LatinName
         {
@@ -42,17 +37,19 @@ namespace ReefTank.Models.Base
         }
 
         [HasAndBelongsToMany(
-            Lazy = true,
-            ColumnKey = "Inhabitant",
-            ColumnRef = "Tag",
-            Table = "InhabitantTags")]
+            ColumnKey = "CreatureId",  
+            ColumnRef = "TagId", 
+            Table = "CreatureTag", 
+            Cascade = ManyRelationCascadeEnum.SaveUpdate, 
+            Lazy = true)]
         public virtual IList<Tag> Tags { get; set; }
 
         [HasAndBelongsToMany(
-            Lazy = true,
-            ColumnKey = "Inhabitant",
-            ColumnRef = "Reference",
-            Table = "InhabitantTags")]
+            ColumnKey = "CreatureId", 
+            ColumnRef = "ReferenceId", 
+            Table = "CreatureReference", 
+            Cascade = ManyRelationCascadeEnum.SaveUpdate, 
+            Lazy = true)]
         public virtual IList<Reference> References { get; set; }
     }
 }
