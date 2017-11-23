@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using Castle.ActiveRecord;
+using ReefTank.Core.Domain;
 
 namespace ReefTank.Models.Base
 {
     [ActiveRecord(Lazy = true)]
-    public class Genus
+    public class Genus : IAggregateRoot
     {
         [PrimaryKey(PrimaryKeyType.GuidComb)]
         public virtual Guid Id { get; set; }
@@ -14,7 +15,7 @@ namespace ReefTank.Models.Base
         public virtual string Name { get; set; }
 
         [BelongsTo]
-        public virtual Family Family { get; set; }
+        public virtual Subcategory Subcategory { get; set; }
 
         [HasMany(Lazy = true, Cascade = ManyRelationCascadeEnum.All, Inverse = true)]
         public virtual IList<Creature> Creatures { get; set; }

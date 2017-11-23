@@ -14,5 +14,27 @@ namespace ReefTank.Web.Areas.Fish.Controllers
         {
             return View();
         }
+
+        //public ActionResult Create()
+        //{
+        //    return View();
+        //}
+
+        //[HttpPost]
+        //public ActionResult Create()
+        //{
+        //    return RedirectToAction("Index");
+        //}
+
+        public ActionResult Edit(Guid id)
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Edit()
+        {
+            return RedirectToAction("Index");
+        }
     }
 }
