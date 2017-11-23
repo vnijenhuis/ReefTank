@@ -4,11 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Castle.ActiveRecord;
+using ReefTank.Core.Domain;
 
 namespace ReefTank.Models.Base
 {
     [ActiveRecord(Lazy = true)]
-    public class Category
+    public class Category : IAggregateRoot
     {
         [PrimaryKey(PrimaryKeyType.GuidComb)]
         public virtual Guid Id { get; set; }
@@ -17,6 +18,6 @@ namespace ReefTank.Models.Base
         public virtual string Name { get; set; }
 
         [HasMany(Lazy = true, Cascade = ManyRelationCascadeEnum.All, Inverse = true)]
-        public virtual IList<Creature> Creatures { get; set; }
+        public virtual IList<Subcategory> Subcategories { get; set; }
     }
 }

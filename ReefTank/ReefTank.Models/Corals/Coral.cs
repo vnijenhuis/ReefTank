@@ -7,9 +7,6 @@ namespace ReefTank.Models.Corals
     public class Coral : Creature
     {
         [Property]
-        public virtual CoralType CoralType { get; set; }
-
-        [Property]
         public virtual string Difficulty { get; set; }
 
         [Property]
@@ -22,7 +19,7 @@ namespace ReefTank.Models.Corals
         public virtual string Lighting { get; set; }
 
         [Property]
-        public virtual string Frag { get; set; }
+        public virtual string Fragmenting { get; set; }
 
         [Property]
         public virtual double MinimumPh { get; set; }
@@ -69,15 +66,4 @@ namespace ReefTank.Models.Corals
             }
         }
     }
-
-    /*
-        Degree of Difficulty: Easy to moderate makes this coral great for beginners. They get most nutrients from tank lighting and filter feeding on bacteria.
-        Alkalinity: 8° to 10° dKH
-        Calcium: 400 - 420 ppm
-        Origin: Many places.
-        Lighting: They need moderate to bright light.
-        Water Movement: Fair to high and turbulent flows.
-        Frag: Easy to frag with live rock rubble.
-        Warning: There are species of zoanthids that are toxic to humans. Always wear gloves when working with them or being exposed to tank water. Wash thoroughly when you are done.
-     */
 }
