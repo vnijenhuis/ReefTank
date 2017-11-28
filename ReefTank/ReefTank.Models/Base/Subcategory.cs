@@ -18,7 +18,10 @@ namespace ReefTank.Models.Base
         public virtual Category Category { get; set; }
 
         [Property]
-        public virtual string LatinName { get; set; }
+        public virtual string Slug { get; set; }
+
+        [Property]
+        public virtual string CommonName { get; set; }
 
         [Property]
         public virtual string ScientificName { get; set; }

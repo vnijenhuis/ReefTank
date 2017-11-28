@@ -95,12 +95,21 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>Bin\System.Web.Optimization.dll</HintPath>
@@ -209,7 +218,9 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Config\ActiveRecord.cfg.config" />
+    <Content Include="Config\ActiveRecord.cfg.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Areas\Fish\Views\web.config" />
     <Content Include="Areas\Corals\Views\web.config" />
     <Content Include="Areas\Corals\Views\Coral\Index.cshtml" />
@@ -266,9 +277,17 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ReefTank.Core\ReefTank.Core.csproj">
+      <Project>{F9055DF0-1145-413A-8767-A5830450706F}</Project>
+      <Name>ReefTank.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ReefTank.Models\ReefTank.Models.csproj">
       <Project>{3E3C8106-CA5F-47D0-9439-860E4A057D13}</Project>
       <Name>ReefTank.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ReefTank.Services\ReefTank.Services.csproj">
+      <Project>{9544ED4C-CE52-4AE5-BC0D-58058A7D6470}</Project>
+      <Name>ReefTank.Services</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

@@ -17,6 +17,9 @@ namespace ReefTank.Models.Base
         [Property]
         public virtual string Name { get; set; }
 
+        [Property]
+        public virtual string Slug { get; set; }
+
         [HasMany(Lazy = true, Cascade = ManyRelationCascadeEnum.All, Inverse = true)]
         public virtual IList<Subcategory> Subcategories { get; set; }
     }

@@ -7,13 +7,13 @@ namespace ReefTank.Models.Inhabitants
     public class Inhabitant : Creature
     {
         [Property]
-        public virtual int Length { get; set; }
+        public virtual double Length { get; set; }
 
         [Property]
-        public virtual int Volume { get; set; }
+        public virtual double Volume { get; set; }
 
         [Property]
-        public virtual Suitability Suitability { get; set; }
+        public virtual SpecialRequirements SpecialRequirements { get; set; }
 
         [Property]
         public virtual ReefCompatability ReefCompatability { get; set; }
@@ -22,6 +22,6 @@ namespace ReefTank.Models.Inhabitants
         public virtual Temperament Temperament { get; set; }
 
         [Property]
-        public virtual Hardiness Hardiness { get; set; }
+        public virtual string Diet { get; set; }
     }
 }

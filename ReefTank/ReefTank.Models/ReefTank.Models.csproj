@@ -79,10 +79,9 @@
     <Compile Include="Base\Creature.cs" />
     <Compile Include="Base\Reference.cs" />
     <Compile Include="Base\Tag.cs" />
-    <Compile Include="Inhabitants\Suitability.cs" />
+    <Compile Include="Inhabitants\SpecialRequirements.cs" />
     <Compile Include="Inhabitants\Temperament.cs" />
     <Compile Include="Inhabitants\ReefCompatability.cs" />
-    <Compile Include="Inhabitants\Hardiness.cs" />
     <Compile Include="Inhabitants\Inhabitant.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Base\TagType.cs" />

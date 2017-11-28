@@ -15,6 +15,9 @@ namespace ReefTank.Models.Base
         public virtual string Title { get; set; }
 
         [Property]
+        public virtual string Slug { get; set; }
+
+        [Property(ColumnType = "StringClob", SqlType = "nvarchar(400)")]
         public virtual string Description { get; set; }
 
         [Property]

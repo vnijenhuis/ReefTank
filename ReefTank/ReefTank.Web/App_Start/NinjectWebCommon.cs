@@ -1,3 +1,8 @@
+using ReefTank.Core.Repositories;
+using ReefTank.Core.Domain;
+using System.Web.Http;
+using System.Web.Http.Dependencies;
+
 [assembly: WebActivatorEx.PreApplicationStartMethod(typeof(ReefTank.Web.App_Start.NinjectWebCommon), "Start")]
 [assembly: WebActivatorEx.ApplicationShutdownMethodAttribute(typeof(ReefTank.Web.App_Start.NinjectWebCommon), "Stop")]
 
@@ -10,6 +15,7 @@ namespace ReefTank.Web.App_Start
 
     using Ninject;
     using Ninject.Web.Common;
+    using ReefTank.Services.Creatures;
 
     public static class NinjectWebCommon 
     {
@@ -61,6 +67,12 @@ namespace ReefTank.Web.App_Start
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
-        }        
+            kernel.Bind((typeof(IBaseRepository<>))).To(typeof(BaseRepository<>));
+            kernel.Bind((typeof(IRepository<>))).To(typeof(BaseRepository<>));
+
+            kernel.Bind<ICreatureService>().To<CreatureService>();
+
+            //GlobalConfiguration.Configuration.DependencyResolver = new NinjectResolver(kernel);
+        }
     }
 }

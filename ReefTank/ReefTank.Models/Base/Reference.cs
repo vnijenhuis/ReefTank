@@ -18,6 +18,9 @@ namespace ReefTank.Models.Base
         public virtual string Title { get; set; }
 
         [Property]
+        public virtual string Slug { get; set; }
+
+        [Property]
         public virtual string Source { get; set; }
 
         [Property]

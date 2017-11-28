@@ -26,7 +26,7 @@ namespace ReefTank.Models.Base
         [Property]
         public virtual string Origin { get; set; }
 
-        public virtual string LatinName
+        public virtual string ScientificName
         {
             get
             {
